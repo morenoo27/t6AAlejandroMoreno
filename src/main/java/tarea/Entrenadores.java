@@ -12,5 +12,8 @@ package tarea;
 public class Entrenadores extends Equipo{
     
     private double salario;
+    private boolean suplente; //true, es suplente
+    private int especializacion;
+    
     
 }

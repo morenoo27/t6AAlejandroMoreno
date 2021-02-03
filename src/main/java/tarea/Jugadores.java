@@ -14,4 +14,5 @@ public class Jugadores extends Equipo{
     private int posicion;
     private int numDorsal;
     private double salario;
+    private boolean suplente; //true = suplente
 }

@@ -9,7 +9,7 @@ package tarea;
  *
  * @author alejandro
  */
-public class Equipo extends Persona{
+public class Equipo extends Liga{
     
     private String nombreClub;
 }
