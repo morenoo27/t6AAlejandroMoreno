@@ -5,6 +5,8 @@
  */
 package tarea;
 
+import java.util.Objects;
+
 /**
  *
  * @author alejandro
@@ -14,6 +16,7 @@ public class Entrenadores extends Equipo{
     private double salario;
     private boolean suplente; //true, es suplente
     private int especializacion;
+    private String nacionalidad;
 
     public Entrenadores() {
         
@@ -21,6 +24,7 @@ public class Entrenadores extends Equipo{
         this.salario = 0;
         this.suplente = false;
         this.especializacion = 0;
+        this.nacionalidad = "";
     }
 
     public double getSalario() {
@@ -46,6 +50,14 @@ public class Entrenadores extends Equipo{
     public void setEspecializacion(int especializacion) {
         this.especializacion = especializacion;
     }
+    
+    public String getNacionalidad() {
+        return this.nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
 
     @Override
     public int hashCode() {
@@ -53,6 +65,7 @@ public class Entrenadores extends Equipo{
         hash = 23 * hash + (int) (Double.doubleToLongBits(this.salario) ^ (Double.doubleToLongBits(this.salario) >>> 32));
         hash = 23 * hash + (this.suplente ? 1 : 0);
         hash = 23 * hash + this.especializacion;
+        hash = 23 * hash + Objects.hashCode(this.nacionalidad);
         return hash;
     }
 
@@ -77,6 +90,9 @@ public class Entrenadores extends Equipo{
         if (this.especializacion != other.especializacion) {
             return false;
         }
+        if (!Objects.equals(this.nacionalidad, other.nacionalidad)) {
+            return false;
+        }
         return true;
     }
 
@@ -86,5 +102,11 @@ public class Entrenadores extends Equipo{
         return texto + ". Entrenador: " + salario + ", suplente=" + suplente + ", especializacion=" + especializacion + '}';
     }
     
-    
+    @Override
+    public void esEspañola() {
+
+        if (this.getNacionalidad().equalsIgnoreCase("españa")) {
+            System.out.println("Entrena a un esquipo de españita :3");
+        }
+    }
 }
