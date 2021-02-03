@@ -11,13 +11,13 @@ import java.util.Objects;
  *
  * @author alejandro
  */
-public abstract class Liga {
+public class Liga {
 
     private String nombre, paisPertenece;
 
     public Liga() {
-        
-        this.nombre="nombre";
+
+        this.nombre = "nombre";
         this.paisPertenece = "pais";
     }
 
@@ -66,11 +66,15 @@ public abstract class Liga {
         return true;
     }
 
-    
     @Override
     public String toString() {
-        return "Liga: " + nombre + ", pais: " + paisPertenece ;
+        return "Liga: " + nombre + ", pais: " + paisPertenece;
     }
-    
-    
+
+    public void esEspañola() {
+
+        if (this.paisPertenece.equalsIgnoreCase("españa")) {
+            System.out.println("La liga es de españita");
+        }
+    }
 }
