@@ -5,6 +5,8 @@
  */
 package tarea;
 
+import java.util.Objects;
+
 /**
  *
  * @author alejandro
@@ -35,6 +37,36 @@ public abstract class Liga {
         this.paisPertenece = paisPertenece;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.nombre);
+        hash = 41 * hash + Objects.hashCode(this.paisPertenece);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Liga other = (Liga) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.paisPertenece, other.paisPertenece)) {
+            return false;
+        }
+        return true;
+    }
+
+    
     @Override
     public String toString() {
         return "Liga: " + nombre + ", pais: " + paisPertenece ;
