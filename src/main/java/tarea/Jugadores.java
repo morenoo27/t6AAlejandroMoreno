@@ -5,6 +5,8 @@
  */
 package tarea;
 
+import java.util.Objects;
+
 /**
  *
  * @author alejandro
@@ -15,6 +17,7 @@ public class Jugadores extends Equipo {
     private int numDorsal;
     private double salario;
     private boolean suplente; //true = suplente
+    private String nacionalidad;
 
     public Jugadores() {
 
@@ -23,6 +26,7 @@ public class Jugadores extends Equipo {
         this.posicion = 0;
         this.salario = 0;
         this.suplente = false;
+        this.nacionalidad = "";
     }
 
     public int getPosicion() {
@@ -56,14 +60,23 @@ public class Jugadores extends Equipo {
     public void setSuplente(boolean suplente) {
         this.suplente = suplente;
     }
+    
+    public String getNacionalidad() {
+        return this.nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + this.posicion;
-        hash = 59 * hash + this.numDorsal;
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.salario) ^ (Double.doubleToLongBits(this.salario) >>> 32));
-        hash = 59 * hash + (this.suplente ? 1 : 0);
+        hash = 37 * hash + this.posicion;
+        hash = 37 * hash + this.numDorsal;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.salario) ^ (Double.doubleToLongBits(this.salario) >>> 32));
+        hash = 37 * hash + (this.suplente ? 1 : 0);
+        hash = 37 * hash + Objects.hashCode(this.nacionalidad);
         return hash;
     }
 
@@ -91,6 +104,9 @@ public class Jugadores extends Equipo {
         if (this.suplente != other.suplente) {
             return false;
         }
+        if (!Objects.equals(this.nacionalidad, other.nacionalidad)) {
+            return false;
+        }
         return true;
     }
 
@@ -98,5 +114,13 @@ public class Jugadores extends Equipo {
     public String toString() {
         String texto = super.toString();
         return texto + ". Jugador: " + posicion + ", dorsal: " + numDorsal + ", salario: " + salario + ", suplente:" + suplente;
+    }
+    
+    @Override
+    public void esEspañola() {
+
+        if (this.getNacionalidad().equalsIgnoreCase("españañola")) {
+            System.out.println("Este jugador honra a ESPAÑA");
+        }
     }
 }
