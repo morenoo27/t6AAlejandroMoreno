@@ -109,7 +109,7 @@ public class Jugadores extends Equipo {
         }
         return true;
     }
-
+ 
     @Override
     public String toString() {
         String texto = super.toString();
@@ -118,9 +118,14 @@ public class Jugadores extends Equipo {
     
     @Override
     public void esEspañola() {
-
+ 
         if (this.getNacionalidad().equalsIgnoreCase("españañola")) {
             System.out.println("Este jugador honra a ESPAÑA");
         }
+    }
+    
+    public void ttular() {
+        
+        this.setSuplente(false);
     }
 }
