@@ -66,7 +66,7 @@ public class Equipo extends Liga {
     public void esEspañola() {
 
         if (this.getPaisPertenece().equalsIgnoreCase("españa")) {
-            System.out.println("El equipo juega en una liga de ESPAÑA");
+            System.out.println("El equipo juega en una liga de ESPAÑA(SIEMPRE ARRIBA)");
         }
     }
     
