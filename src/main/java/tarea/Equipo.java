@@ -14,6 +14,7 @@ import java.util.Objects;
 public class Equipo extends Liga {
 
     private String nombreClub;
+    private int victoriasDeLiga=0;
 
     public Equipo() {
 
@@ -56,8 +57,9 @@ public class Equipo extends Liga {
 
     @Override
     public String toString() {
+        
         String texto = super.toString();
-        return texto + ". Equipo:" + nombreClub;
+        return texto + ". Equipo:" + nombreClub + ", victorias" + victoriasDeLiga;
     }
 
     @Override
@@ -66,5 +68,9 @@ public class Equipo extends Liga {
         if (this.getPaisPertenece().equalsIgnoreCase("españa")) {
             System.out.println("El equipo juega en una liga de ESPAÑA");
         }
+    }
+    
+    public void ganarLiga() {
+        victoriasDeLiga++;
     }
 }
