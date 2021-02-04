@@ -11,15 +11,15 @@ import java.util.Objects;
  *
  * @author alejandro
  */
-public class Entrenadores extends Equipo{
-    
+public class Entrenadores extends Equipo {
+
     private double salario;
     private boolean suplente; //true, es suplente
     private int especializacion;
     private String nacionalidad;
 
     public Entrenadores() {
-        
+
         super();
         this.salario = 0;
         this.suplente = false;
@@ -50,7 +50,7 @@ public class Entrenadores extends Equipo{
     public void setEspecializacion(int especializacion) {
         this.especializacion = especializacion;
     }
-    
+
     public String getNacionalidad() {
         return this.nacionalidad;
     }
@@ -101,12 +101,16 @@ public class Entrenadores extends Equipo{
         String texto = super.toString();
         return texto + ". Entrenador: " + salario + ", suplente=" + suplente + ", especializacion=" + especializacion + '}';
     }
-    
+
     @Override
     public void esEspañola() {
 
         if (this.getNacionalidad().equalsIgnoreCase("españa")) {
             System.out.println("Entrena a un esquipo de españita :3");
         }
+    }
+
+    public void subirSueldo(double cantidad) {
+        this.setSalario(this.getSalario() + cantidad);
     }
 }
