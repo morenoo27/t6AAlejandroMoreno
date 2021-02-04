@@ -73,4 +73,10 @@ public class Equipo extends Liga {
     public void ganarLiga() {
         victoriasDeLiga++;
     }
+    
+    
+    public void jugarPartido(){
+        
+        System.out.println("Se va a jugar un partido");
+    }
 }

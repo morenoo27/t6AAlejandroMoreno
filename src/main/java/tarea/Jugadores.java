@@ -128,4 +128,11 @@ public class Jugadores extends Equipo {
         
         this.setSuplente(false);
     }
+    
+    @Override
+    public void jugarPartido(){
+        
+        this.setSuplente(false);
+        System.out.println("El jugador va a jugar el partido");
+    }
 }

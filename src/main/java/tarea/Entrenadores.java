@@ -113,4 +113,11 @@ public class Entrenadores extends Equipo {
     public void subirSueldo(double cantidad) {
         this.setSalario(this.getSalario() + cantidad);
     }
+    
+    @Override
+    public void jugarPartido(){
+        
+        this.setSuplente(false);
+        System.out.println("El entrenador estara pendiente");
+    }
 }
