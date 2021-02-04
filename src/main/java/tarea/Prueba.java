@@ -13,6 +13,12 @@ public class Prueba {
     
     public static void main(String[] args) {
         
-                        
+        Liga l1 = new Liga();
+        Liga l2 = new Liga();
+        
+        l1.setNombre("Liga Española");
+        l2.setNombre("Liga Inglesa");
+        
+        l1.setPaisPertenece(paisPertenece);
     }
 }
